@@ -1,31 +1,69 @@
 import React, { Component } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCircle } from '@fortawesome/free-solid-svg-icons'
+import SliderItem from './SliderItem'
+import axios from 'axios'
 
 class Slider extends Component {
     constructor(props) {
         super(props);
-        this.state = {  }
+        this.state = {
+            slide: {},
+            sliders: [],
+            index: 0
+         }
     }
+
+    slide() {
+        $("#slider").fadeOut("slow");
+        var i;
+
+        if (this.state.index == this.state.sliders.length - 1) {
+            i = 0;
+        } else {
+            i = this.state.index + 1;
+        }
+        $("#slider").fadeIn({
+            duration: 2000, 
+            start:(() => {
+                this.setState(prevState => ({
+                    slide: prevState.sliders[i],
+                    index: i
+                }));
+            })
+        });
+    
+        
+    }
+
+    componentDidMount() {
+        axios.get('/slides.json')
+        .then(slides => {
+            var first = slides.data.sliders[this.state.index];
+
+            this.setState({
+                sliders: slides.data.sliders,
+                slide: first
+            })
+            
+            if (slides.data.sliders.length > 1) {
+                this.interval = setInterval(() => this.slide(), 10000);
+            }
+
+        }).catch(res => {
+            console.log(res);
+        })
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.interval);
+      }
+
     render() { 
         return ( 
-            <div class="slider">
-                <div class="headline head1">
-                    <div class="head-holder">
-                        <div class="headline-title dark">Porkies</div>
-                        <div class="headline-info light">This is the other porkies information</div>
-                    </div>
+            <section id="slider-box">
+                <div id="slider">
+                    <SliderItem slide={this.state.slide} color={this.props.color} />                
                 </div>
-                <div class="headline head2">
-                    <div class="head-holder">
-                        <div class="headline-title light">Wakefield</div>
-                        <div class="headline-info light">This is the other Wakefield information</div>
-                    </div>
-                </div>
-                <div class="slideCount">
-                    <span class="c1 slIcon"><FontAwesomeIcon icon={faCircle} /></span><span class="c2 slIcon"><FontAwesomeIcon icon={faCircle} /></span><span class="c3 slIcon"><FontAwesomeIcon icon={faCircle} /></span>
-                </div>
-            </div>
+            </section>
          );
     }
 }

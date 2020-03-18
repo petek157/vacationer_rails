@@ -1,0 +1,6 @@
+<% @sliders.each do |s| %>
+    <%= s.title %>
+    <% if s.image.attached? %>
+        <%= image_tag url_for(s.image), class: "image"%>
+    <% end %>
+<% end %>

@@ -1,3 +1,26 @@
+.feature {
+    height: 200px;
+    display: flex;
+    background-repeat: no-repeat;
+    &.left {
+        justify-content: left;
+    }
+    &.right {
+        justify-content: right;
+    }
+}
+
+.feature-info {
+    width: 80%;
+    &.left {
+        text-align: left;
+    }
+    &.right {
+        text-align: right;
+    }
+}
+
+
 .feature-title {
     color: green;
 }

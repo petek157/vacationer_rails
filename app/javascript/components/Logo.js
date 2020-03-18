@@ -8,9 +8,9 @@ class Logo extends Component {
     }
     render() { 
         return ( 
-            <header class="absolute">
-                <div class="container make-space">
-                    <a href="/index.html" class="logo">
+            <header className="absolute">
+                <div className="container make-space">
+                    <a href="/index.html" className="logo">
                         <img src={this.props.image} />
                     </a>
                 </div>

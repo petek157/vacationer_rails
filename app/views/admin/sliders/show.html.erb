@@ -1,0 +1,69 @@
+<div id="main-container">
+    <div class="selector">
+        <%= link_to "+ New Slider", new_admin_slider_path(), class: "link"%>
+
+            <% @sliders.each do |u| %>
+                <% if u == @slider %>
+                    <%= link_to "#{u.title}", admin_slider_path(u), class: "link-selected"%>
+                <% else %>
+                    <%= link_to "#{u.title}", admin_slider_path(u), class: "link"%>
+                <% end %>
+            <% end %>
+
+    </div>
+    <div class="info">
+        <%= form_for [:admin, @slider] do |s| %>
+    <div class="form-box">
+        <div class="form-col">
+            <div class="form-item">
+                <%= s.label(:position, "Position") %><br />
+                <%= s.select(:position, options_for_select(@positions, @slider.position), class: ["form-input", "form-company"]) %>
+            </div>
+                <div class="form-item">
+                <%= s.label(:title, "Title") %><br />
+                <%= s.text_field(:title, class: ["form-input", "form-company"], placeholder: "Title") %>
+            </div>
+            <div class="form-item">
+                <%= s.label(:subtitle, "Sub Title") %><br />
+                <%= s.text_field(:subtitle, class: ["form-input", "form-company"], placeholder: "Sub Title") %>
+            </div>
+            <div class="form-item">
+                <%= s.label(:note, "Note") %><br />
+                <%= s.text_field(:note, class: ["form-input", "form-company"], placeholder: "Note") %>
+            </div>
+            <div class="form-item">
+                <%= s.label(:splash, "Splash Note") %><br />
+                <%= s.text_field(:splash, class: ["form-input", "form-company"], placeholder: "Splash") %>
+            </div>
+            <div class="form-item">
+                <%= s.label(:published, "Published?") %><br />
+                <%= s.check_box(:published) %>
+            </div>
+        </div>
+
+        <div class=".form-col">
+            <div class="form-item">
+                <%= s.label(:image, "Image") %><br />
+                <%= s.file_field :image  %>
+            </div>
+            <% if @slider.image.attached? %>
+                <%= image_tag url_for(@slider.image), class: "main-image"%>
+            <% end %>
+
+            <div class="form-item">
+                <%= s.label(:color, "Text Color") %><br />
+                <%= s.radio_button(:color, "black") %>
+                <%= label_tag(:color, "Black") %>
+                <%= s.radio_button(:color, "white") %>
+                <%= label_tag(:color, "White") %>
+            </div>
+        </div>
+
+        <div class="form-buttons .grid-3">
+            <%= s.submit("Update Slider", class: ["res-button", "print"]) %>
+            <button class="res-button back"><%= link_to("Cancel", admin_sliders_path()) %></button>
+        </div>
+    </div>
+<% end %>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+<%= form_for [:admin, @slider] do |s| %>
+            <div class="form-box">
+                <div class="form-col">
+                    <div class="form-item">
+                        <%= s.label(:position, "Position") %><br />
+                        <%= s.select(:position, options_for_select(@positions, @newPo), class: ["form-input", "form-company"]) %>
+                    </div>
+                     <div class="form-item">
+                        <%= s.label(:title, "Title") %><br />
+                        <%= s.text_field(:title, class: ["form-input", "form-company"], placeholder: "Title") %>
+                    </div>
+                    <div class="form-item">
+                        <%= s.label(:subtitle, "Sub Title") %><br />
+                        <%= s.text_field(:subtitle, class: ["form-input", "form-company"], placeholder: "Sub Title") %>
+                    </div>
+                    <div class="form-item">
+                        <%= s.label(:note, "Note") %><br />
+                        <%= s.text_field(:note, class: ["form-input", "form-company"], placeholder: "Note") %>
+                    </div>
+                    <div class="form-item">
+                        <%= s.label(:splash, "Splash Note") %><br />
+                        <%= s.text_field(:splash, class: ["form-input", "form-company"], placeholder: "Splash") %>
+                    </div>
+                    <div class="form-item">
+                        <%= s.label(:published, "Published?") %><br />
+                        <%= s.check_box(:published) %>
+                    </div>
+                </div>
+
+                <div class=".form-col">
+                    <div class="form-item">
+                        <%= s.label(:image, "Image") %><br />
+                        <%= s.file_field :image  %>
+                    </div>
+                </div>
+
+                <div class="form-buttons .grid-3">
+                    <%= s.submit("Edit Slider", class: ["res-button", "print"]) %>
+                    <button class="res-button back"><%= link_to("Cancel", admin_sliders_path()) %></button>
+                </div>
+            </div>
+        <% end %>

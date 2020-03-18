@@ -1,92 +1,88 @@
-.head-holder {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    bottom: 40px;
-    left: 0;
-    right: 0;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-//Minimum background image width 1440px;
-.head1 {
-    background: image_url("sunrise.jpg") no-repeat;
-    opacity: 1;
+$dark-blue: #002736;
+$light-blue: #045D73;
+$orange: #ff9933;
+$bg-color: #f5f4f0;
+$bg-border-color: #6e6e6e;
+$text-color: #6e6e6e;
 
-}
+@media (min-width: 768px) {
 
-.head2 {
-    background: image_url("wake1cleansmall.jpg");
-
-    display: none;
-}
-
-.dark {
-    color: black;
-}
-
-.light {
-    color: white;
-}
-
-.headline {
-    padding-top: 0px;
-    height: 100%;
-    //display: inline-block;
-    vertical-align: middle;
-    //background: image_url("summitPorkies.jpg");
-}
-
-.headline-title {
-    text-align: center;
-    font-size: 50px;
-}
-
-.headline-info {
-    font-style: italic;
-    text-align: center;
-}
-
-.slider {
-    img {
+    #slider-box {
         width: 100%;
-    }
-    height: 450px;
-    
-    position: relative;
-
-    overflow: hidden;
-    z-index: 0;
-
-    #map {
-        height: 100%;
-        width: 100%;
-    }
-}
-
-@media only screen and (min-width: 768px) {
-
-    .slider {
-        img {
-            width: 100%;
-        }
+        height: 430px;
+        background-color: white;
         position: relative;
-        max-height: 560px;
-        overflow: hidden;
-        z-index: 0;
     }
 
+    #slider {
+        text-align: center;
+    }
 
-}
-
-@media only screen and (max-width: 1440px) {
-
-    .slider {
+    .slider-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
         img {
-            width: 1440px;
+            max-height: 430px;
         }
     }
 
-    
+    .slider-info-box {
+        position: relative;
+        text-align: center;
+        padding-top: 220px;
 
+        &.black {
+            color: black;
+        }
+
+        &.white {
+            color: white;
+        }
+    }
+
+    .slider-title {
+        font-size: 50px;
+    }
+
+    .slider-subtitle {
+        font-size: 25px;;
+    }
+
+    .slider-note {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 70px;
+        display: block;
+        background-image: linear-gradient(rgba($orange, 0), $orange, $orange);
+    }
+
+    .s-note {
+        text-align: center;
+        padding-top: 37px;
+        color: white;
+        font-size: 25px;
+        font-style: italic;
+        font-weight: bold;
+    }
+
+    .slider-splash {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100px;
+        background-color: $orange;
+
+        width: 30%;
+        display: block;
+        padding: 10px;
+        border-radius: 0px 0px 0px 10px;
+        font-size: 20px;
+        text-align: center;
+
+        box-shadow: -2px 2px 2px black, -2px 0px 2px black;
+    }
 }

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_17_030451) do
+ActiveRecord::Schema.define(version: 2020_03_18_155918) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci", force: :cascade do |t|
     t.string "name", null: false
@@ -48,6 +48,18 @@ ActiveRecord::Schema.define(version: 2020_03_17_030451) do
     t.boolean "isFeatured", default: false
     t.integer "position"
     t.boolean "isActive", default: true
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "sliders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci", force: :cascade do |t|
+    t.string "title"
+    t.string "subtitle"
+    t.string "note"
+    t.string "splash"
+    t.boolean "published"
+    t.integer "position"
+    t.string "color"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

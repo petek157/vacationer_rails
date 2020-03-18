@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html class="admin">
+  <head>
+    <title>Vacationer</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+  </head>
+
+  <body>
+
+    <% if !flash[:notice].blank? %>
+        <div class=" note notice">
+            <%= flash[:notice] %>
+        </div>
+    <% elsif flash[:success] %>
+        <div class="note success">
+            <%= flash[:success] %>
+        </div>
+    <% elsif flash[:alert] %>
+        <div class="note alert">
+            <%= flash[:alert] %>
+        </div>
+    <% end %>
+    
+    <div class="front">
+        <div class="logo"><%= link_to(image_tag("flatVacationerLogo.png"), admin_sliders_path()) %></div>
+        <div class="">Admin</div>
+    </div>
+
+    
+
+    <main>
+        <%= yield %>
+    </main>
+    <footer>
+        
+    </footer>
+    
+  </body>
+</html>
