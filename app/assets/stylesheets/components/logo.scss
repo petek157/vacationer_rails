@@ -1,0 +1,121 @@
+header {
+    &.fixed {
+        position: fixed;
+    }
+    &.relative{
+        position: relative;
+    }
+
+    &.absolute{
+        position: absolute;
+    }
+
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    height: 50px;
+    z-index: 1000;
+    padding: 14px 0 5px 0;
+    //background: rgba(255,255,255,.78);
+
+    &.map {
+        background: transparent;
+    }
+
+    #mobile-menu {
+        position: fixed;
+        display: none;
+        //display: flex;
+        height: 50px;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        flex-direction: row;
+        background-color: rgb(64, 126, 177);
+        z-index: 1001;
+        text-align: center;
+
+        a {
+            padding-top: 8px;
+            padding-bottom: 8px;
+            text-decoration: none;
+            font-size: 16px;
+            flex-grow: 1;
+        }
+    }
+
+    .mobile-menu-icon {
+        cursor: pointer;
+    }
+
+    .container {
+        display: flex;
+        position: relative;
+        max-width: 1140px;
+        
+        box-sizing: border-box;
+        
+        .mobile-menu-icon {
+            flex-grow: 1;
+            text-align: right;
+        }
+
+        
+
+        .logo {
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .desk-menu {
+            display: none;
+        }
+
+        nav {
+            &.desk-menu {
+                display: none;
+            }
+
+            flex-grow: 3;
+
+            ul {
+                list-style: none;
+                padding: 0px;
+                margin: 0px;
+
+                &.desk-top {
+                    display: none;
+                }
+                li {
+                    display: inline;
+
+                    a {
+                        text-decoration: none;
+                        font-size: 19px;
+                        text-transform: uppercase;
+                        font-weight: 600;
+                    }
+
+                    &.menu-item {
+                        margin: 0 10px;
+                    }
+
+                }
+            }
+
+            
+        }
+
+        #user {
+            flex-grow: 1;
+            text-align: right;
+            a {
+                text-decoration: none;
+            }
+
+        }
+    
+    }
+
+    
+}
