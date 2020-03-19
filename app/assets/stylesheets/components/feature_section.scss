@@ -12,6 +12,7 @@
 
 .feature-info {
     width: 80%;
+    padding: 15px;
     &.left {
         text-align: left;
     }
@@ -23,4 +24,9 @@
 
 .feature-title {
     color: green;
+    font-size: 2em;
+}
+
+.feature-text {
+    font-size: 1.3em;
 }

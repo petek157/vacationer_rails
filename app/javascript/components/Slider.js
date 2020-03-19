@@ -29,9 +29,7 @@ class Slider extends Component {
                     index: i
                 }));
             })
-        });
-    
-        
+        });   
     }
 
     componentDidMount() {

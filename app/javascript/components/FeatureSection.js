@@ -8,18 +8,23 @@ class FeatureSection extends Component {
 
     componentDidMount() {
         if (this.props.image) {
-
-            $(".feature").css("background", "linear-gradient(65deg, rgba(255,255,255,0), rgba(255,255,255,1),rgba(255,255,255,1)), url(" + this.props.image + ")");
+            
+            if (this.props.align == "left") {
+                $(".feature-" + this.props.position).css("background", "linear-gradient(65deg, rgba(255,255,255,1), rgba(255,255,255,1),rgba(255,255,255,0)), url(" + this.props.image + ")");
+            } else {
+                $(".feature-" + this.props.position).css("background", "linear-gradient(65deg, rgba(255,255,255,0), rgba(255,255,255,1),rgba(255,255,255,1)), url(" + this.props.image + ")");
+            }
+            
             $(".feature").css("background-repeat", "no-repeat");
             //$(".feature").css("background-image", "linear-gradient(to top right, rgba(255,255,255,0), rgba(255,255,255,1), rgba(255,255,255,1))");
-            $(".feature").css("background-position", this.props.x + " " + this.props.y );
+            $(".feature-" + this.props.position).css("background-position", this.props.x + " " + this.props.y );
             //$(".feature-info").css("background-image", "linear-gradient(to top right, rgba(255,255,255,0), rgba(255,255,255,1), rgba(255,255,255,1))" );
         }
     }
 
     render() { 
         return ( 
-            <section className={"feature " + this.props.align}>
+            <section className={"feature feature-" + this.props.position + " " + this.props.align}>
                 <div className={"feature-info " + this.props.align}>
                     <div className="feature-title">{this.props.title}</div>
                     <div className="feature-text">{this.props.text}</div>
