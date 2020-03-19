@@ -1,5 +1,9 @@
+$light-blue: #81bfb7;
+$orange: #ff9933;
+$green :rgb(114, 170, 114);
+
 .feature {
-    height: 200px;
+    height: 250px;
     display: flex;
     background-repeat: no-repeat;
     &.left {
@@ -11,8 +15,11 @@
 }
 
 .feature-info {
-    width: 80%;
+    width: 65%;
     padding: 15px;
+    display: flex;
+    flex-direction: column;
+
     &.left {
         text-align: left;
     }
@@ -23,10 +30,26 @@
 
 
 .feature-title {
-    color: green;
     font-size: 2em;
+
+    &.spring {
+        color: $light-blue;
+    }
+
+    &.fall {
+        color: $orange;
+    }
+
+    &.summer {
+        color: $green;
+    }
+
+    &.winter {
+        color: $light-blue;
+    }
 }
 
 .feature-text {
     font-size: 1.3em;
+    flex-grow: 1;
 }

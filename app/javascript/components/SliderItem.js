@@ -26,11 +26,12 @@ class SliderItem extends Component {
             //$(".slider-note").css("background-color", "transparent");
             $(".slider-splash").css("display", "none");
         }
-
+        $(".slider-image").css("background-image", "url(" + this.props.slide.image_url + ")")
+        //<img src={this.props.slide.image_url} />
         return ( 
             <div>
                 <div className="slider-image">
-                    <img src={this.props.slide.image_url} />
+                    
                 </div>
                 <div className={"slider-info-box " + this.props.slide.color} >
                     <div className="slider-title">

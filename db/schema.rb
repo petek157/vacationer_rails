@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_18_155918) do
+ActiveRecord::Schema.define(version: 2020_03_19_193059) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci", force: :cascade do |t|
     t.string "name", null: false
@@ -42,12 +42,26 @@ ActiveRecord::Schema.define(version: 2020_03_18_155918) do
     t.string "city"
     t.string "state", limit: 2
     t.string "zipcode", limit: 10
-    t.string "phone"
+    t.string "phone", limit: 14
     t.string "website"
     t.string "category", null: false
     t.boolean "isFeatured", default: false
     t.integer "position"
-    t.boolean "isActive", default: true
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.boolean "published", default: true
+  end
+
+  create_table "features", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci", force: :cascade do |t|
+    t.boolean "published"
+    t.integer "position"
+    t.string "title"
+    t.text "text"
+    t.string "link"
+    t.string "align"
+    t.string "x"
+    t.string "y"
+    t.string "theme"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

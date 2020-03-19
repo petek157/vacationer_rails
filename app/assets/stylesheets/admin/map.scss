@@ -1,0 +1,27 @@
+.map-box {
+
+    height: 450px;
+    
+    position: relative;
+
+    overflow: hidden;
+    z-index: 0;
+
+    #map {
+        height: 100%;
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .map-box {
+        position: relative;
+        max-height: 560px;
+        overflow: hidden;
+        z-index: 0;
+    }
+}
+
+@media only screen and (max-width: 1440px) {
+
+}

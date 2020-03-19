@@ -1,0 +1,36 @@
+$light-blue: #81bfb7;
+$orange: #ff9933;
+$green :rgb(114, 170, 114);
+
+.feature-button {
+    border-radius: 10px;
+    border-color: transparent;
+    padding: 8px;
+    min-width: 130px;
+    font-size: 15px;
+    cursor: pointer;
+
+    &.spring {
+        background-color: $light-blue;    
+        color: white;
+    }
+
+    &.fall {
+        background-color: $orange;    
+        color: white;
+    }
+
+    &.summer {
+        background-color: $green;    
+        color: white;
+    }
+
+    &.winter {
+        background-color: $light-blue;    
+        color: white;
+    }
+
+    &.font-22 {
+        font-size: 22px;
+    }
+}

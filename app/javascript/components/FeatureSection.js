@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Button from "./Button";
 
 class FeatureSection extends Component {
     constructor(props) {
@@ -20,16 +21,19 @@ class FeatureSection extends Component {
             $(".feature-" + this.props.position).css("background-position", this.props.x + " " + this.props.y );
             //$(".feature-info").css("background-image", "linear-gradient(to top right, rgba(255,255,255,0), rgba(255,255,255,1), rgba(255,255,255,1))" );
         }
+        if (this.props.link == "") {
+            $(".feature-" + this.props.position + " .feature-link").hide();
+        }
     }
 
     render() { 
         return ( 
             <section className={"feature feature-" + this.props.position + " " + this.props.align}>
                 <div className={"feature-info " + this.props.align}>
-                    <div className="feature-title">{this.props.title}</div>
+                    <div className={"feature-title " + this.props.theme}>{this.props.title}</div>
                     <div className="feature-text">{this.props.text}</div>
                     <div className="feature-link">
-                        <a className="" href={this.props.link}>More Info</a>
+                        <Button link={this.props.link} title="More Info" theme={this.props.theme}/>
                     </div>
                 </div>
             </section>

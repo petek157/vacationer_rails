@@ -1,0 +1,84 @@
+<div id="main-container">
+    <div class="selector">
+        <%= link_to "+ New Feature", new_admin_feature_path(), class: "link"%>
+
+            <% @features.each do |u| %>
+                <% if u == @feature %>
+                    <%= link_to "#{u.title}", admin_feature_path(u), class: "link-selected"%>
+                <% else %>
+                    <%= link_to "#{u.title}", admin_feature_path(u), class: "link"%>
+                <% end %>
+            <% end %>
+
+    </div>
+    <div class="info">
+        <%= form_for [:admin, @feature] do |s| %>
+            <div class="form-box">
+                <div class="form-col">
+                    <div class="form-item">
+                        <%= s.label(:position, "Position") %><br />
+                        <%= s.select(:position, options_for_select(@positions, @feature.position), class: ["form-input", "form-company"]) %>
+                    </div>
+                        <div class="form-item">
+                        <%= s.label(:title, "Title") %><br />
+                        <%= s.text_field(:title, class: ["form-input", "form-company"], placeholder: "Title") %>
+                    </div>
+                    <div class="form-item">
+                        <%= s.label(:text, "Text") %><br />
+                        <%= s.text_area(:text, class: ["form-input", "form-company"], placeholder: "Text") %>
+                    </div>
+                    <div class="form-item">
+                        <%= s.label(:link, "Link") %><br />
+                        <%= s.text_field(:link, class: ["form-input", "form-company"], placeholder: "Link") %>
+                    </div>
+                    <div class="form-item">
+                        <%= s.label(:align, "Feature alignment") %><br />
+                        <%= s.radio_button(:align, "left") %>
+                        <%= label_tag(:align, "Left") %>
+                        <%= s.radio_button(:align, "right") %>
+                        <%= label_tag(:align, "Right") %>
+                    </div>
+                    <div class="form-item">
+                        <%= s.label(:x, "Image horizontal adjustment (x%, xpx, left, center, right)") %><br />
+                        <%= s.text_field(:x, class: ["form-input", "form-company"]) %>
+                    </div>
+                    <div class="form-item">
+                        <%= s.label(:y, "Image vertical adjustment (x%, xpx, top, center, bottom)") %><br />
+                        <%= s.text_field(:y, class: ["form-input", "form-company"]) %>
+                    </div>
+                    <div class="form-item">
+                        <%= s.label(:published, "Published?") %><br />
+                        <%= s.check_box(:published) %>
+                    </div>
+                    <div class="form-item">
+                        <%= s.label(:theme, "Info color theme") %><br />
+                        <%= s.radio_button(:theme, "spring") %>
+                        <%= label_tag(:theme, "Spring") %>
+                        <%= s.radio_button(:theme, "summer") %>
+                        <%= label_tag(:theme, "Summer") %>
+                        <%= s.radio_button(:theme, "fall") %>
+                        <%= label_tag(:theme, "Fall") %>
+                        <%= s.radio_button(:theme, "winter") %>
+                        <%= label_tag(:theme, "Winter") %>
+                    </div>
+                </div>
+
+                <div class=".form-col">
+                    <div class="form-item">
+                        <%= s.label(:image, "Image") %><br />
+                        <%= s.file_field :image  %>
+                    </div>
+                </div>
+
+                <div class="form-buttons .grid-3">
+                    <%= s.submit("Update Feature", class: ["res-button", "print"]) %>
+                    <button class="res-button back"><%= link_to("Cancel", admin_features_path()) %></button>
+                </div>
+                <% if @feature.image.attached? %>
+                    <%= image_tag url_for(@feature.image.variant(resize_to_fit: [600, 600])), class: "main-image"%>
+                <% end %>
+            </div>
+        <% end %>
+
+    </div>
+<div>

@@ -1,0 +1,103 @@
+<% provide :head_tags do %>
+    <meta name='turbolinks-visit-control' content='reload'>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+            initAdminMap(<%= raw @bus.to_json%>)
+        });
+    </script>
+<% end %>
+
+<div class="map-box">
+    <div id="map"></div>
+</div>
+
+<div id="bulk" class="make-space">
+    <div class="bus-list-box">
+        <div id="bus-list">
+            <div class='business-name'><%= link_to("+ New Business", new_admin_business_path()) %></div>
+            <% @allBusinesses.each do |business| %>
+                <% if business.id == @bus.id%>
+                    <div class='business-name selected'><%= link_to(business.name, admin_business_path(business.id)) %></div>
+                <% else %>
+                    <div class='business-name'><%= link_to(business.name, admin_business_path(business.id)) %></div>
+                <% end %>
+            <% end %>
+        </div>
+    </div>
+
+    <div class="bus-form-box">
+        <%= form_for [:admin, @bus], method: :put do |f| %>
+            <%= hidden_field(:position, :readonly => true) %>
+            <div class="project-form-fields">
+
+                <%= content_tag(:div, f.text_field(:name, class: ["form-input", "form-company"], placeholder: "Business Name"), class: "form-item") %>
+
+                <div class="coords">
+                    <%= f.text_field(:latitude, class: "bus-lat", placeholder: "Click on Map") %>
+                    <%= f.text_field(:longitude, class: "bus-lng", placeholder: "Click on Map") %>
+                </div>
+
+                <div class="form-item">
+                    <div class="radio-label">Active?</div>
+                    <div class="form-item-flex">
+                        <%= f.radio_button(:published, :true) %>
+                        <%= label_tag(:active_true, "True", class: "active-label") %>
+                    </div>
+                    <div class="form-item-flex">
+                        <%= f.radio_button(:published, :false) %>
+                        <%= label_tag(:active_false, "False", class: "active-label") %>
+                    </div>
+                </div>
+                
+                <%= content_tag(:div, f.text_field(:category, class: ["form-input", "form-position", "cat-sel-text"], placeholder: "Business Category"), class: "form-item") %>
+            <%= select_tag(:category_sel, options_for_select(@cats), include_blank: "Category", class: "cat-sel" ) %>
+
+                <%= content_tag(:div, f.text_field(:address1, class: ["form-input", "form-position"], placeholder: "Address"), class: "form-item") %>
+                
+                <%= content_tag(:div, f.text_field(:address2, class: ["form-input", "form-position"], placeholder: "Address"), class: "form-item") %>
+
+                <%= content_tag(:div, f.text_field(:city, class: ["form-input", "form-company"], placeholder: "City"), class: "form-item") %>
+
+                <%= content_tag(:div, f.text_field(:state, class: ["form-input", "form-company"], placeholder: "State"), class: "form-item") %>
+
+                <%= content_tag(:div, f.text_field(:zipcode, class: ["form-input", "form-position"], placeholder: "Zipcode"), class: "form-item") %>
+
+                <%= content_tag(:div, f.text_field(:phone, class: ["form-input", "form-position"], placeholder: "Phone"), class: "form-item") %>
+
+                <%= content_tag(:div, f.text_field(:website, class: ["form-input", "form-position"], placeholder: "Website"), class: "form-item") %>
+                
+                <div class="form-item">
+                    <div class="radio-label">Featured</div>
+                    <div class="form-item-flex">
+                        <%= f.radio_button(:isFeatured, :true) %>
+                        <%= label_tag(:featured_true, "True", class: "active-label") %>
+                    </div>
+                    <div class="form-item-flex">
+                        <%= f.radio_button(:isFeatured, :false) %>
+                        <%= label_tag(:featured_false, "False", class: "active-label") %>
+                    </div>
+                </div>
+
+                <div class="form-item form-image image">
+                    <div class="form-image-con">
+                        <div class="form-image-label">Featured Ad</div>
+                        <div class="form-image-field"><%= f.file_field(:featureAd) %></div>
+                    </div>
+                    <div class="form-main-image">
+                        <% if @bus.featureAd.attached? %>
+                            <%= image_tag(@bus.featureAd, class: "list-item-image")%>
+                        <% end %>
+                    </div>
+                </div>
+
+                <div class="form-buttons">
+                    <%= f.submit("Save", class: ["res-button", "print"]) %>
+
+                    <button class="bus-cancel-large res-button back"><%= link_to("Cancel", admin_business_path(@bus)) %></button>
+                    <button class="bus-cancel-small res-button back"><%= link_to("Cancel", admin_businesses_path()) %></button>
+                </div>
+            </div>
+        <% end %>
+
+    </div>
+</div>
