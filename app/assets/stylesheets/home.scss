@@ -1,6 +1,10 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+$light-blue: #81bfb7;
+$orange: #ff9933;
+$green :rgb(114, 170, 114);
+
 body {
     margin: 0px;
 }
@@ -8,4 +12,24 @@ body {
 footer {
     height: 100px;
     background-color: grey;
+}
+
+.main-heading {
+    font-size: 2.5rem;
+}
+
+.spring {
+    color: $light-blue;
+}
+
+.fall {
+    color: $orange;
+}
+
+.summer {
+    color: $green;
+}
+
+.winter {
+    color: $light-blue;
 }

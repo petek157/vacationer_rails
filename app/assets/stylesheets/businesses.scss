@@ -1,0 +1,13 @@
+.cat-title {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#bus-boxes {
+    padding: 10px 50px 10px 50px;
+    display: flex;
+    .bus-item {
+        width: 450px;
+    }
+}

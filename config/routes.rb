@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   root 'home#index'
   get 'home/index'
+  get 'businesses', to: 'home#businesses'
 
   get 'slides', to: 'home#slides'
   get 'categories', to: 'home#categories'

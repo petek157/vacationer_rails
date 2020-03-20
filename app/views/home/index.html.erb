@@ -1,7 +1,7 @@
 <%= react_component("Logo", {image: "#{image_url "flatVacationerLogo.png"}"}) %>
 <%= react_component("Slider") %>
-<%= react_component("InfoSection") %>
-<%= react_component("BusinessCategories") %>
+<%= react_component("InfoSection", {theme: "winter"}) %>
+<%= react_component("BusinessCategories", {theme: "fall"}) %>
 
 <% @features.each do |f| %>
     <%= react_component("FeatureSection", {position: f.position.to_s, 

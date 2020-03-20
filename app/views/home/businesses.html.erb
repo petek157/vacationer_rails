@@ -1,0 +1,39 @@
+<% provide :head_tags do %>
+    <meta name='turbolinks-visit-control' content='reload'>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+            initMap(<%= raw @businesses.to_json%>)
+        });
+    </script>
+<% end %>
+<%= react_component("Logo", {image: "#{image_url "flatVacationerLogo.png"}"}) %>
+<div class="map-box">
+    <div id="map"></div>
+</div>
+
+<div id="bulk" class="make-space front">
+    
+    <div id="welcome" class="make-space">
+        <div class="cat-title main-heading spring"><%= @title%></div>
+    </div>
+
+    <div id="featured-boxes" class="make-space">
+        <% @businesses.each do |b| %>
+
+            <% if b.isFeatured && b.featureAd.attached? %>
+                <%= image_tag(b.featureAd, class: "list-item-image")%>
+            <% end %>
+        <% end %>
+    </div>
+
+    
+
+    <div id="bus-boxes" class="make-space">
+        <% @businesses.each do |b| %>
+            <% #img = b.image.attached? ? url_for(b.image.variant(resize_to_fill: [150, 150])) : ""%>
+            <%= react_component("BusinessListing", {business: b, theme: @theme}) %>
+            
+        <% end %>
+    </div>
+
+</div>

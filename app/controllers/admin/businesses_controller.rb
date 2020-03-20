@@ -60,10 +60,23 @@ class Admin::BusinessesController < AdminApplicationController
   def edit
   end
 
+  def update
+    @business = Business.find(params[:id])
+
+    if @business.update(business_params)
+      
+      flash[:notice] = "#{@business.name} was updated successfully."
+      redirect_to(admin_business_path(@business))
+
+    else
+      render('edit')
+    end
+  end
+
   private
 
   def business_params
-    params.require(:business).permit(:name, :latitude, :longitude, :address1, :address2, :city, :state, :zipcode, :phone, :website, :category, :isFeatured, :position, :published, :featureAd)
+    params.require(:business).permit(:name, :latitude, :longitude, :address1, :address2, :city, :state, :zipcode, :phone, :website, :category, :isFeatured, :position, :published, :image, :featureAd)
   end
 
 end
