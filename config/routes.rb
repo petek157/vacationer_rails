@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   get 'home/index'
 
   get 'slides', to: 'home#slides'
-
+  get 'categories', to: 'home#categories'
+  
   post 'admin/access/attempt_login'
   get 'admin/access/login'
   get 'admin/access/logout'

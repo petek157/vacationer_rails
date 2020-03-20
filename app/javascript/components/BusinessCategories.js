@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Button from "./Button";
+import axios from 'axios';
 
 class BusinessCategories extends Component {
     constructor(props) {
@@ -30,7 +31,7 @@ class BusinessCategories extends Component {
                 <div className="business-cats">
                     {
                         this.state.cats.map(c => 
-                            <Button link={this.props.link} title={c.title} theme="fall"/>
+                            <Button key={c} link={"businesses?cat=" + c.replace(/ /g, "_").toLowerCase()} title={c} theme="fall"/>
                         )
                     }
                 </div>
