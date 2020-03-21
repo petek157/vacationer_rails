@@ -1,6 +1,6 @@
-<%= react_component("Logo", {image: "#{image_url "flatVacationerLogo.png"}"}) %>
+<%= react_component("Logo", {image: "#{image_url "vacationerLogo.png"}"}) %>
 <%= react_component("Slider") %>
-<%= react_component("InfoSection", {theme: "winter"}) %>
+
 <%= react_component("BusinessCategories", {theme: "fall"}) %>
 
 <% @features.each do |f| %>
@@ -15,7 +15,7 @@
     image: url_for(f.image.variant(resize_to_fit: [nil, 600])),
     }) %>
 <% end %>
-
+<%= react_component("InfoSection", {theme: "winter"}) %>
 <footer>
 
 </footer>

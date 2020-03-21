@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+//<%= react_component("InfoSection", {theme: "winter"}) %>
 class InfoSection extends Component {
     constructor(props) {
         super(props);

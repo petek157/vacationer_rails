@@ -1,12 +1,22 @@
-// Place all the styles related to the Home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+@import url('https://fonts.googleapis.com/css?family=Sen&display=swap');
+
 $light-blue: #81bfb7;
 $orange: #ff9933;
 $green :rgb(114, 170, 114);
 
+//Default theme is spring
+$theme-l: #e5f5f5;
+$theme-m: #69aca3;
+$theme-d: #226d63;
+
 body {
     margin: 0px;
+    font-family: 'Sen', sans-serif;
+}
+
+.theme-l {
+    background-color: $theme-l;
+    color: #949aa8;
 }
 
 footer {

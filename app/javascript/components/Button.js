@@ -4,24 +4,14 @@ class Button extends Component {
     constructor(props) {
         super(props);
         this.state = {  }
-
-        this.clicked = this.clicked.bind(this);
-    }
-    
-    componentDidMount() {
-
-    }
-
-    clicked(link) {
-        window.location.href = link;
     }
 
     render() { 
         return ( 
             <div>
-                <button className={"feature-button " + this.props.theme } onClick={this.clicked.bind(this, this.props.link)}>
-                    {this.props.title}
-                </button>
+                <a href={this.props.link}>
+                    <button className={"feature-button " + this.props.theme }>{this.props.title}</button>
+                </a>
             </div>
         );
     }
