@@ -26,7 +26,7 @@ class BusinessCategories extends Component {
     render() { 
         return ( 
             <section className="info">
-                <div className={"info-title " + this.props.theme}>Local Businesses</div>
+                <div className={"info-title main-heading " + this.props.theme}>Local Businesses</div>
                 <div className="info-text">While visiting, please visit all of the Western UP and Northern WI businesses.</div>
                 <div className="business-cats">
                     {

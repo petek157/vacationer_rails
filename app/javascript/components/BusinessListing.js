@@ -11,15 +11,22 @@ class BusinessListing extends Component {
         return ( 
             <div className="bus-item" >
                 <div className="item-box">
-                    <div className="item-info">
+
+                    <div className="item-title">
                         <div className="item-name">{b.name}</div>
-                        <div className="item-address">{b.address1}</div>
-                        {b.address2 != "" && <div className="item-address">{b.address2}</div>}
-                        <div className="item-city">{b.city + ", " + b.state + " " + b.zipcode}</div>
-                        <div className="item-phone">{b.phone}</div>
                     </div>
-                    <div className="item-nav">
-                        {b.website != "" && <Button link={b.website} title="Website" theme={this.props.theme}/>}
+
+                    <div className="item-info">
+                        <div className="item-contact"> 
+                            <div className="item-address">{b.address1}</div>
+                            {b.address2 != "" && <div className="item-address">{b.address2}</div>}
+                            <div className="item-city">{b.city + ", " + b.state + " " + b.zipcode}</div>
+                            <div className="item-phone">{b.phone}</div>
+                        </div>
+                    
+                        <div className="item-nav">
+                            {b.website != "" && <Button link={b.website} title="Website" theme={this.props.theme}/>}
+                        </div>
                     </div>
                 </div>
             </div>
