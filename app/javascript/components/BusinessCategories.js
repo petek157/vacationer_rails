@@ -27,7 +27,7 @@ class BusinessCategories extends Component {
         return ( 
             <section className="info">
                 <div className={"info-title main-heading " + this.props.theme}>Local Businesses</div>
-                { this.props.showSub && <div className="info-text">While visiting, please visit all of the Western UP and Northern WI businesses.</div>}
+                { this.props.showSub && <div className="info-text sub-text">While visiting, please visit all of the Western UP and Northern WI businesses.</div>}
                 <div className="business-cats">
                     {
                         this.state.cats.map(c => 

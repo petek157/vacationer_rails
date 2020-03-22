@@ -2,7 +2,7 @@
 <%= react_component("Slider") %>
 
 <%= react_component("BusinessCategories", {theme: "fall", showSub: true}) %>
-<%= react_component("FeatureAd", {image: "#{image_url @ad}"}) %>
+<%= react_component("FeatureAd", {image: "#{image_url @ad}"}) if @ad != "" %>
 <% @features.each do |f| %>
     <%= react_component("FeatureSection", {position: f.position.to_s, 
     title: f.title,

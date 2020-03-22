@@ -1,5 +1,7 @@
 .feature-area {
-    padding: 25px 50px 25px 50px;
+    padding: 15px 10px 5px 10px;
+    display: grid;
+    grid-template-columns: 1fr;
 }
 
 .feature {
@@ -17,16 +19,13 @@
 }
 
 .feature-info {
-    width: 65%;
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
+    padding-top: 5px;
 
     &.left {
-        text-align: left;
+        text-align: center;
     }
     &.right {
-        text-align: right;
+        text-align: center;
     }
 }
 
@@ -40,4 +39,71 @@
 .feature-text {
     font-size: 1.3em;
     flex-grow: 1;
+}
+
+@media only screen and (min-width: 768px) {
+    .feature-area {
+        padding: 25px 50px 25px 50px;
+        display: grid;
+        &.left {
+            grid-template-columns: 65% 35%;
+        }
+        &.right {
+            grid-template-columns: 35% 65%;
+        }
+        
+    }
+    
+    .feature {
+        height: 250px;
+        display: flex;
+        
+    
+        background-repeat: no-repeat;
+        &.left {
+            justify-content: left;
+            
+        }
+        &.right {
+            justify-content: right;
+        }
+    }
+    
+    .feature-info {
+        width: 65%;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+    
+        &.left {
+            text-align: left;
+            grid-row: 1;
+        }
+        &.right {
+            text-align: right;
+        }
+    }
+    
+    
+    .feature-title {
+        font-size: 2em;
+    
+        
+    }
+    
+    .feature-text {
+        font-size: 1.3em;
+        flex-grow: 1;
+    }
+}
+
+@media only screen and (min-width: 1070px) {
+    .feature-ad {
+        width: 970px;
+        height: 90px;
+    }
+}
+
+@media only screen and (max-width: 1440px) {
+ 
 }

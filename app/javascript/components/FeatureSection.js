@@ -28,14 +28,13 @@ class FeatureSection extends Component {
 
     render() { 
         return ( 
-            <section className="feature-area d-bg">
-                <div className={"feature feature-" + this.props.position + " " + this.props.align}>
-                    <div className={"feature-info " + this.props.align}>
-                        <div className={"feature-title " + this.props.theme}>{this.props.title}</div>
-                        <div className="feature-text">{this.props.text}</div>
-                        <div className="feature-link">
-                            <Button link={this.props.link} title="More Info" theme={this.props.theme}/>
-                        </div>
+            <section className={"feature-area d-bg " + this.props.align}>
+                <div className={"feature feature-" + this.props.position + " " + this.props.align}></div>
+                <div className={"feature-info " + this.props.align}>
+                    <div className={"feature-title " + this.props.theme}>{this.props.title}</div>
+                    <div className="feature-text">{this.props.text}</div>
+                    <div className="feature-link">
+                        <Button link={this.props.link} title="More Info" theme={this.props.theme}/>
                     </div>
                 </div>
             </section>

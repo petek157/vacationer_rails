@@ -5,6 +5,90 @@ $bg-color: #f5f4f0;
 $bg-border-color: #6e6e6e;
 $text-color: #6e6e6e;
 
+#slider-box {
+    width: 100%;
+    height: 200px;
+    background-color: white;
+    position: relative;
+}
+
+#slider {
+    text-align: center;
+    height: 100% //
+}
+
+.slider-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+
+    background-size: cover;
+    background-position: center;
+}
+
+.slider-info-box {
+    position: absolute;
+    text-align: center;
+    //padding-top: 220px;
+    left: 0; //
+    right: 0; //
+    bottom: 5px; //
+
+    &.black {
+        color: black;
+    }
+
+    &.white {
+        color: white;
+    }
+}
+
+.slider-title {
+    font-size: 2rem;
+}
+
+.slider-subtitle {
+    font-size: 1rem;
+}
+
+// .slider-note {
+//     position: absolute;
+//     bottom: 0;
+//     left: 0;
+//     right: 0;
+//     height: 70px;
+//     display: none;
+//     background-image: linear-gradient(rgba($orange, 0), $orange, $orange);
+// }
+
+// .s-note {
+//     text-align: center;
+//     padding-top: 37px;
+//     color: white;
+//     font-size: 25px;
+//     font-style: italic;
+//     font-weight: bold;
+// }
+
+// .slider-splash {
+//     position: absolute;
+//     top: 0;
+//     right: 0;
+//     width: 100px;
+//     background-color: $orange;
+
+//     width: 30%;
+//     display: none;
+//     padding: 10px;
+//     border-radius: 0px 0px 0px 10px;
+//     font-size: 20px;
+//     text-align: center;
+
+//     box-shadow: -2px 2px 2px black, -2px 0px 2px black;
+// }
+
 @media (min-width: 768px) {
 
     #slider-box {
@@ -24,6 +108,9 @@ $text-color: #6e6e6e;
         left: 0;
         right: 0;
         height: 430px;
+
+        background-size: auto;
+        background-position: initial;
     }
 
     .slider-info-box {
@@ -41,46 +128,46 @@ $text-color: #6e6e6e;
     }
 
     .slider-title {
-        font-size: 50px;
+        font-size: 3rem;
     }
 
     .slider-subtitle {
-        font-size: 25px;;
+        font-size: 1.5rem;;
     }
 
-    .slider-note {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        height: 70px;
-        display: none;
-        background-image: linear-gradient(rgba($orange, 0), $orange, $orange);
-    }
+    // .slider-note {
+    //     position: absolute;
+    //     bottom: 0;
+    //     left: 0;
+    //     right: 0;
+    //     height: 70px;
+    //     display: none;
+    //     background-image: linear-gradient(rgba($orange, 0), $orange, $orange);
+    // }
 
-    .s-note {
-        text-align: center;
-        padding-top: 37px;
-        color: white;
-        font-size: 25px;
-        font-style: italic;
-        font-weight: bold;
-    }
+    // .s-note {
+    //     text-align: center;
+    //     padding-top: 37px;
+    //     color: white;
+    //     font-size: 25px;
+    //     font-style: italic;
+    //     font-weight: bold;
+    // }
 
-    .slider-splash {
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 100px;
-        background-color: $orange;
+    // .slider-splash {
+    //     position: absolute;
+    //     top: 0;
+    //     right: 0;
+    //     width: 100px;
+    //     background-color: $orange;
 
-        width: 30%;
-        display: none;
-        padding: 10px;
-        border-radius: 0px 0px 0px 10px;
-        font-size: 20px;
-        text-align: center;
+    //     width: 30%;
+    //     display: none;
+    //     padding: 10px;
+    //     border-radius: 0px 0px 0px 10px;
+    //     font-size: 20px;
+    //     text-align: center;
 
-        box-shadow: -2px 2px 2px black, -2px 0px 2px black;
-    }
+    //     box-shadow: -2px 2px 2px black, -2px 0px 2px black;
+    // }
 }
