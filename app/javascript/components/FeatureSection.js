@@ -28,7 +28,7 @@ class FeatureSection extends Component {
 
     render() { 
         return ( 
-            <section className="feature-area">
+            <section className="feature-area d-bg">
                 <div className={"feature feature-" + this.props.position + " " + this.props.align}>
                     <div className={"feature-info " + this.props.align}>
                         <div className={"feature-title " + this.props.theme}>{this.props.title}</div>

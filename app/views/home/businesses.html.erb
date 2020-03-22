@@ -6,13 +6,14 @@
         });
     </script>
 <% end %>
-<%= react_component("Logo", {image: "#{image_url "flatVacationerLogo.png"}"}) %>
+<%= react_component("Logo", {image: "#{image_url "vacationerLogo.png"}"}) %>
 <div class="map-box">
     <div id="map"></div>
 </div>
 
 <div id="bulk" class="make-space front">
-    
+    <%= react_component("BusinessCategories", {theme: "fall", showSub: false}) %>
+    <%= react_component("FeatureAd", {image: "#{image_url @ad}"})%>
     <div id="welcome" class="make-space">
         <div class="cat-title main-heading spring"><%= @title%></div>
     </div>

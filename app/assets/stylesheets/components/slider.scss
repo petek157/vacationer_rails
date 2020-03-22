@@ -54,7 +54,7 @@ $text-color: #6e6e6e;
         left: 0;
         right: 0;
         height: 70px;
-        display: block;
+        display: none;
         background-image: linear-gradient(rgba($orange, 0), $orange, $orange);
     }
 
@@ -75,7 +75,7 @@ $text-color: #6e6e6e;
         background-color: $orange;
 
         width: 30%;
-        display: block;
+        display: none;
         padding: 10px;
         border-radius: 0px 0px 0px 10px;
         font-size: 20px;
