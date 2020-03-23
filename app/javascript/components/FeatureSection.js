@@ -11,15 +11,15 @@ class FeatureSection extends Component {
         if (this.props.image) {
             
             if (this.props.align == "left") {
-                $(".feature-" + this.props.position).css("background", "linear-gradient(65deg, rgba(255,255,255,1), rgba(255,255,255,1),rgba(255,255,255,0)), url(" + this.props.image + ")");
+                $(".feature-" + this.props.position).css("background", "url(" + this.props.image + ")");
             } else {
-                $(".feature-" + this.props.position).css("background", "linear-gradient(65deg, rgba(255,255,255,0), rgba(255,255,255,1),rgba(255,255,255,1)), url(" + this.props.image + ")");
+                $(".feature-" + this.props.position).css("background", "url(" + this.props.image + ")");
             }
             
-            $(".feature").css("background-repeat", "no-repeat");
-            //$(".feature").css("background-image", "linear-gradient(to top right, rgba(255,255,255,0), rgba(255,255,255,1), rgba(255,255,255,1))");
             $(".feature-" + this.props.position).css("background-position", this.props.x + " " + this.props.y );
-            //$(".feature-info").css("background-image", "linear-gradient(to top right, rgba(255,255,255,0), rgba(255,255,255,1), rgba(255,255,255,1))" );
+
+            $(".feature").css("background-repeat", "no-repeat");
+
         }
         if (this.props.link == "") {
             $(".feature-" + this.props.position + " .feature-link").hide();
