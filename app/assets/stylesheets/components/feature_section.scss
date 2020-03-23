@@ -1,12 +1,12 @@
 .feature-area {
-    padding: 15px 10px 5px 10px;
+    padding: 15px 10px 15px 10px;
     display: grid;
     grid-template-columns: 1fr;
 }
 
 .feature {
     height: 250px;
-    display: flex;
+    // display: flex;
     
 
     background-repeat: no-repeat;
@@ -19,13 +19,19 @@
 }
 
 .feature-info {
-    padding-top: 5px;
+    background-color: white;
 
     &.left {
         text-align: center;
     }
     &.right {
         text-align: center;
+    }
+
+    .feature-info-items {
+        display: flex;
+        flex-direction: column;
+        padding: 15px;
     }
 }
 
@@ -39,6 +45,8 @@
 .feature-text {
     font-size: 1.3em;
     flex-grow: 1;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -70,8 +78,7 @@
     }
     
     .feature-info {
-        width: 65%;
-        padding: 15px;
+        width: 100%;
         display: flex;
         flex-direction: column;
     
@@ -81,6 +88,10 @@
         }
         &.right {
             text-align: right;
+        }
+
+        .feature-info-items {
+            height: 100%;
         }
     }
     

@@ -7,13 +7,13 @@
     </script>
 <% end %>
 <%= react_component("Logo", {image: "#{image_url "vacationerLogo.png"}"}) %>
-<div class="map-box">
+<div class="front-map-box">
     <div id="map"></div>
 </div>
 
 <div id="bulk" class="make-space front">
     <%= react_component("BusinessCategories", {theme: "fall", showSub: false}) %>
-    <%= react_component("FeatureAd", {image: "#{image_url @ad}"})%>
+    <%= react_component("FeatureAd", {image: "#{image_url @ad}"}) if @ad != ""%>
     <div id="welcome" class="make-space">
         <div class="cat-title main-heading spring"><%= @title%></div>
     </div>

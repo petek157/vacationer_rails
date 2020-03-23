@@ -12,10 +12,42 @@
 
         .item-info {
             display: flex;
-
+            flex-direction: column;
             .item-contact {
                 flex-grow: 1;
             }
         }
     }
+}
+
+@media only screen and (min-width: 768px) {
+    .bus-item {
+        background-color: #EEE;
+        padding: 5px;
+    
+        .item-name {
+            font-size: 1.3rem;
+        }
+    
+        .item-box {
+            display: flex;
+            flex-direction: column;
+    
+            .item-info {
+                display: flex;
+    
+                .item-contact {
+                    flex-grow: 1;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1070px) {
+
+}
+
+@media only screen and (max-width: 1440px) {
+ 
 }

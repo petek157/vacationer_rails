@@ -8,7 +8,7 @@ class Button extends Component {
 
     render() { 
         return ( 
-            <div className="button-container">
+            <div className={"button-container " + this.props.align}>
                 <a href={this.props.link}>
                     <button className={"feature-button " + this.props.theme }>{this.props.title}</button>
                 </a>

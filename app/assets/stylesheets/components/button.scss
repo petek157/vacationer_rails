@@ -4,6 +4,9 @@ $green :rgb(114, 170, 114);
 
 .button-container {
     text-align: center;
+        &.left, &.right {
+            text-align: center;
+        }
 }
 
 .feature-button {
@@ -38,4 +41,23 @@ $green :rgb(114, 170, 114);
     &.font-22 {
         font-size: 22px;
     }
+}
+
+@media only screen and (min-width: 768px) {
+    .button-container {
+        &.left {
+            text-align: left;
+        }
+        &.right {
+            text-align: right;
+        }
+    }
+}
+
+@media only screen and (min-width: 1070px) {
+    
+}
+
+@media only screen and (max-width: 1440px) {
+ 
 }

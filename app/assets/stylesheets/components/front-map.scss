@@ -1,0 +1,28 @@
+.front-map-box {
+
+    height: 300px;
+    
+    position: relative;
+
+    overflow: hidden;
+    z-index: 0;
+
+    #map {
+        height: 100%;
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .front-map-box {
+        height: 450px;
+    }
+}
+
+@media only screen and (min-width: 1070px) {
+    
+}
+
+@media only screen and (max-width: 1440px) {
+ 
+}
