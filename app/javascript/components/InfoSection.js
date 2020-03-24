@@ -8,9 +8,10 @@ class InfoSection extends Component {
     }
     render() { 
         return ( 
+            
             <section className="info">
                 <div className={"info-title main-heading " + this.props.theme}>The Western Upper Peninsula of Michigan and Northern Wisconsin</div>
-                <div className="info-text sub-text">This is where all of the main text for this info box will be held. May even enter it as a prop.</div>
+                <div className="info-text sub-text">The Western UP of MI and Northern WI have many wonderful indoor and out door activities for all ages. Whether its hiking the waterfalls in the spring, enjoying the 4th of July festivities in the summer, fall color walks or downhill skiing in the winter there is always something to do.</div>
             </section>
          );
     }
