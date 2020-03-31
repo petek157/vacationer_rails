@@ -10,7 +10,7 @@ class HomeController < ApplicationController
 
   def businesses
     if !params[:cat]
-      redirect(root)
+      redirect(root_path)
     else
 
       ##Set a global model for different setting ei themes##
