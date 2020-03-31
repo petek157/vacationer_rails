@@ -1,0 +1,25 @@
+version: '3'
+volumes:
+    mysql-data:
+services:
+    db:
+        image: mysql
+        environment: 
+            MYSQL_ROOT_PASSWORD: example
+        ports: 
+            - '3306:3306'
+        volumes: 
+            - mysql-data:/var/lib/mysql/data
+    app:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000"
+        environment: 
+            #- DATABASE_URL=mysql2://root:example@db:3306
+            - RAILS_SERVE_STATIC_FILES=true
+        ports: 
+            - "3000:3000"
+        depends_on: 
+            - db
+        restart: always

@@ -48,7 +48,7 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  url: <%= Rails.application.credentials.dig(:db, :pro_url) %>
-  # database: vacationer_production
+  url: <%= Rails.application.credentials.dig(:db, :pro_url) %> #<%= ENV['DATABASE_URL'] %> 
+  #database: vacationer_production
   # username: vacationer
   # password: <%= ENV['VACATIONER_DATABASE_PASSWORD'] %>
