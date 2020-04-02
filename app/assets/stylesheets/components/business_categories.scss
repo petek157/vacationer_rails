@@ -1,7 +1,7 @@
 .business-cats {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    justify-content: center;
+    gap: 8px 8px;
 
     .feature-button {
         width: 100%;
@@ -11,15 +11,24 @@
 
 @media only screen and (min-width: 768px) {
     .business-cats {
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-        gap: 0 8px;
+        grid-template-columns: 1fr 1fr 1fr;
+        
     }
 }
 
 @media only screen and (min-width: 1070px) {
-
+    .business-cats {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        
+    }
 }
 
+@media only screen and (min-width: 1300px) {
+    .business-cats {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        
+    }
+}
 @media only screen and (max-width: 1440px) {
  
 }
