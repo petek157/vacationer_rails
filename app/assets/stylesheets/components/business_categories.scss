@@ -2,12 +2,17 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-content: center;
+
+    .feature-button {
+        width: 100%;
+        margin: 0px;
+    }
 }
 
 @media only screen and (min-width: 768px) {
     .business-cats {
-        display: flex;
-        justify-content: center;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        gap: 0 8px;
     }
 }
 

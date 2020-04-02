@@ -12,7 +12,7 @@
     x: f.x,
     y: f.y,
     theme: f.theme,
-    image: url_for(f.image.variant(resize_to_fit: [nil, 600])),
+    image: url_for(f.image.variant(resize_to_fill: [640, 250])),
     }) %>
 <% end %>
 <%= react_component("InfoSection", {theme: "winter"}) %>
