@@ -34,9 +34,11 @@ class FeatureSection extends Component {
                     <div className="feature-info-items">
                         <div className={"feature-title " + this.props.theme}>{this.props.title}</div>
                         <div className="feature-text sub-text">{this.props.text}</div>
-                        <div className="feature-link">
-                            <Button link={this.props.link} title="More Info" theme={this.props.theme} align={this.props.align}/>
-                        </div>
+                        {this.props.link != "" &&
+                            <div className="feature-link">
+                                <Button link={this.props.link} title="More Info" theme={this.props.theme} align={this.props.align}/>
+                            </div>
+                        }
                     </div>
                 </div>
             </section>
