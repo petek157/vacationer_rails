@@ -1,19 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class FeatureAd extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {  }
-    }
-    render() { 
-        return ( 
-            <section className="feature-area ad d-bg">
-                <div className="feature-ad">
-                    { this.props.image != "" && <img src={this.props.image} />}
-                </div>
-            </section>
-         );
-    }
+function FeatureAd(props) {
+    console.log(props)
+    return ( 
+        <section className="ad d-bg">
+            <div className="feature-ad large">
+                {<a target="blank" href={props.link}><img src={props.large} /></a>}
+            </div>
+            <div className="feature-ad medium">
+                {<a target="blank" href={props.link}><img src={props.medium} /></a>}
+            </div>
+            <div className="feature-ad small">
+                {<a target="blank" href={props.link}><img src={props.small} /></a>}
+            </div>
+        </section>
+    );
 }
  
 export default FeatureAd;

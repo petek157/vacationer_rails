@@ -13,7 +13,9 @@
 
 <div id="bulk" class="make-space front">
     <%= react_component("BusinessCategories", {theme: "fall", showSub: false}) %>
-    <%= react_component("FeatureAd", {image: "#{image_url @ad}"}) if @ad != ""%>
+    <% if @ad != nil %>
+        <%= react_component("FeatureAd", {large: "#{url_for @ad.large}", medium: "#{url_for @ad.medium}", small: "#{url_for @ad.small}", link: "#{@ad.url}"})%>
+    <% end %>
     <div id="welcome" class="make-space">
         <div class="cat-title main-heading spring"><%= @title%></div>
     </div>

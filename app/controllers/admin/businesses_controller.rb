@@ -12,6 +12,9 @@ class Admin::BusinessesController < AdminApplicationController
   def show
     @bus = Business.find(params[:id])
 
+    @adSets = AdSet.where(business_id: @bus.id).all.order("published ASC")
+    @newAdSet = AdSet.new(business_id: @bus.id, cat: @bus.category)
+
     allcats = Business.select(:category).all.order('category ASC')
     @cats = []
     allcats.each do |c|

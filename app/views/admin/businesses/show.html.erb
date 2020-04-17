@@ -106,5 +106,68 @@
             </div>
         <% end %>
 
+        <div class="ad-sets">
+
+        <%# NEED TO ADD WHICH PAGES TO PUBLISH ON AND IS PUBLISHED %>
+            <div class="new-ad-set">
+                <%= form_for [:admin, @newAdSet] do |newAd| %>
+                    <%= newAd.hidden_field(:id, :readonly => true) %>
+                    <%= newAd.hidden_field(:business_id, :readonly => true) %>
+                    
+                    <%= content_tag(:div, newAd.text_field(:name, class: ["form-input", "form-position"], placeholder: "Ad Set Name"), class: "form-item") %>
+                    <%= content_tag(:div, newAd.text_field(:url, class: ["form-input", "form-position"], placeholder: "link url"), class: "form-item") %>
+                    <div class="form-image-con">
+                        <div class="form-image-label">Large Ad</div>
+                        <div class="form-image-field"><%= newAd.file_field(:large) %></div>
+                    </div>
+                    <div class="form-image-con">
+                        <div class="form-image-label">Medium Ad</div>
+                        <div class="form-image-field"><%= newAd.file_field(:medium) %></div>
+                    </div>
+                    <div class="form-image-con">
+                        <div class="form-image-label">Small Ad</div>
+                        <div class="form-image-field"><%= newAd.file_field(:small) %></div>
+                    </div>
+                    <div class="form-buttons">
+                        <%= newAd.submit("Save New Ad Set", class: ["res-button", "print"]) %>
+                        <button class="bus-cancel-large res-button back"><%= link_to("Cancel", admin_business_path(@bus)) %></button>
+                    </div>
+                <% end %>
+            </div>
+            <% @adSets.each do |ad| %>
+                <%= form_for [:admin, ad], method: :put do |ead| %>
+                    <%= ead.hidden_field(:id, :readonly => true) %>
+                    <%= ead.hidden_field(:business_id, :readonly => true) %>
+
+                    <%= content_tag(:div, ead.text_field(:name, class: ["form-input", "form-position"], placeholder: "Ad Set Name"), class: "form-item") %>
+                    <%= content_tag(:div, ead.text_field(:url, class: ["form-input", "form-position"], placeholder: "link url"), class: "form-item") %>
+                    <div class="form-image-con">
+                        <div class="form-image-label">Large Ad</div>
+                        <div class="form-image-field"><%= ead.file_field(:large) %></div>
+                    </div>
+                    <% if ad.large.attached? %>
+                            <%= image_tag(ad.large, class: "list-item-image")%>
+                    <% end %>
+                    <div class="form-image-con">
+                        <div class="form-image-label">Medium Ad</div>
+                        <div class="form-image-field"><%= ead.file_field(:medium) %></div>
+                    </div>
+                    <% if ad.medium.attached? %>
+                            <%= image_tag(ad.medium, class: "list-item-image")%>
+                    <% end %>
+                    <div class="form-image-con">
+                        <div class="form-image-label">Small Ad</div>
+                        <div class="form-image-field"><%= ead.file_field(:small) %></div>
+                    </div>
+                    <% if ad.small.attached? %>
+                            <%= image_tag(ad.small, class: "list-item-image")%>
+                    <% end %>
+                    <div class="form-buttons">
+                        <%= ead.submit("Update Ad Set", class: ["res-button", "print"]) %>
+                        <button class="bus-cancel-large res-button back"><%= link_to("Cancel", admin_business_path(@bus)) %></button>
+                    </div>
+                <% end %>
+            <% end %>
+        </div>
     </div>
 </div>

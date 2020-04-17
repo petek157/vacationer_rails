@@ -4,8 +4,11 @@ class HomeController < ApplicationController
 
   def index
     @features = Feature.where(published: true).order("position ASC")
-    # @ad = url_for("adBlank970x90.png")
-    @ad = ""
+    min = AdSet.where(published: true, on_main: true).minimum("views")
+    @ad = AdSet.where(published: true, on_main: true, views: min).first
+    @ad.views = @ad.views + 1
+    @ad.save
+    #@ad = ""
   end
 
   def businesses
@@ -20,12 +23,12 @@ class HomeController < ApplicationController
       cat = params[:cat].gsub(/_/, ' ')
       @businesses = Business.where(category: cat).order('name ASC')
 
+      @ad = AdSet.where(published: true, on_cat: true, cat: cat).first
+
       @title = cat.titleize
       @subtitle = "Find the products and service you need."
       @message = "This will be the general welcome message. It should be about 5-8 lines long on a full screen and can be clip shorter on a mobile device. 'alihs'lhglkjnafdgm fg kjnfaj skdnf sn kj dfoigIOPqj jkdf gj wd kdfj hdwkjfhv jlwhjhe jfhq jhe fgjh wdfjgh dwjfhg j,wdhf gwhdf g.hwdf.gh feg;qheghqjfhv jhd vjqh dgh ejrhg jhfg jhdfgjqejrgquertiuqergiuqf gjh qdfgjh qehgjqh egjh qjge qjfgiuqeg qjegh qidf gjh qefghqihe gjhq egjh qejg jqfgj qfegh qejhr fjh dfjh qjerh tjqh ejrth qjerht jqr efjhqrehrf."
 
-      # @ad = url_for("adBlank970x90.png")
-      @ad = ""
     end
   end
 

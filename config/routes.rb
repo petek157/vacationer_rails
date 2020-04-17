@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'home/index'
   get 'businesses', to: 'home#businesses'
 
+  get 'admin', to: 'admin/access#login'
   get 'index', to: 'home#index'
   get 'slides', to: 'home#slides'
   get 'categories', to: 'home#categories'
@@ -14,6 +15,10 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :sliders
+  end
+
+  namespace :admin do
+    resources :ad_sets
   end
 
   namespace :admin do

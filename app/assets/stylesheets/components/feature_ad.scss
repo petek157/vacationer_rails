@@ -1,4 +1,5 @@
 .ad {
+    padding: 25px 50px 25px 50px;
     display: flex;
     justify-content: center;
 }
@@ -6,13 +7,33 @@
 .feature-ad {
     width: 320px;
     height: 50px;
-    background-color: olive;
+    // background-color: olive;
+
+    &.large {
+        display: none;
+    }
+    &.medium {
+        display: none;
+    }
+    &.small {
+        display: block;
+    }
 }
 
 @media only screen and (min-width: 768px) {
     .feature-ad {
         width: 728px;
         height: 90px;
+
+        &.large {
+            display: none;
+        }
+        &.medium {
+            display: block;
+        }
+        &.small {
+            display: none;
+        }
     }
 }
 
@@ -20,6 +41,16 @@
     .feature-ad {
         width: 970px;
         height: 90px;
+
+        &.large {
+            display: block;
+        }
+        &.medium {
+            display: none;
+        }
+        &.small {
+            display: none;
+        }
     }
 }
 
